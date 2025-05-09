@@ -5,6 +5,18 @@ using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+var corsPolicyName = "AllowClient";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(corsPolicyName, policy =>
+    {
+        policy.WithOrigins("http://localhost:5173") // React dev server
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 // Add services to the container.
 
 builder.Services.AddDbContext<StoreContext>(options =>
@@ -37,6 +49,8 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
+
+app.UseCors(corsPolicyName);
 
 app.UseAuthorization();
 
