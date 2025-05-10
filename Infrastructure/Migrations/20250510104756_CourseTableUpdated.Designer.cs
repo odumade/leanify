@@ -3,6 +3,7 @@ using System;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20250510104756_CourseTableUpdated")]
+    partial class CourseTableUpdated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.15");
@@ -108,21 +111,23 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Id = new Guid("b5dee3c1-d269-4a20-aef0-df83e60332ed"),
                             CategoryId = 1,
-                            LastUpdated = new DateTime(2025, 5, 10, 7, 4, 27, 625, DateTimeKind.Local).AddTicks(1010),
-                            Price = 0f,
-                            Rating = 0m,
+                            Instructor = "John Doe",
+                            LastUpdated = new DateTime(2025, 5, 10, 10, 47, 55, 630, DateTimeKind.Utc).AddTicks(712),
+                            Price = 99.99f,
+                            Rating = 4.8m,
                             Students = 0,
                             Title = "C# Masterclass"
                         },
                         new
                         {
-                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Id = new Guid("025ab58a-006a-4706-943a-5f1ca8f57426"),
                             CategoryId = 2,
-                            LastUpdated = new DateTime(2025, 5, 10, 7, 4, 27, 625, DateTimeKind.Local).AddTicks(1057),
-                            Price = 0f,
-                            Rating = 0m,
+                            Instructor = "Jane Smith",
+                            LastUpdated = new DateTime(2025, 5, 10, 10, 47, 55, 630, DateTimeKind.Utc).AddTicks(733),
+                            Price = 79.99f,
+                            Rating = 4.6m,
                             Students = 0,
                             Title = "Web Design"
                         });
@@ -155,19 +160,19 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CourseId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            CourseId = new Guid("b5dee3c1-d269-4a20-aef0-df83e60332ed"),
                             Name = "OOP Principles"
                         },
                         new
                         {
                             Id = 2,
-                            CourseId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            CourseId = new Guid("b5dee3c1-d269-4a20-aef0-df83e60332ed"),
                             Name = "ASP.NET Core"
                         },
                         new
                         {
                             Id = 3,
-                            CourseId = new Guid("22222222-2222-2222-2222-222222222222"),
+                            CourseId = new Guid("025ab58a-006a-4706-943a-5f1ca8f57426"),
                             Name = "Responsive Design"
                         });
                 });
@@ -194,19 +199,19 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CourseId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            CourseId = new Guid("b5dee3c1-d269-4a20-aef0-df83e60332ed"),
                             Name = "Basic programming"
                         },
                         new
                         {
                             Id = 2,
-                            CourseId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            CourseId = new Guid("b5dee3c1-d269-4a20-aef0-df83e60332ed"),
                             Name = "Visual Studio"
                         },
                         new
                         {
                             Id = 3,
-                            CourseId = new Guid("22222222-2222-2222-2222-222222222222"),
+                            CourseId = new Guid("025ab58a-006a-4706-943a-5f1ca8f57426"),
                             Name = "Creative mindset"
                         });
                 });

@@ -1,5 +1,7 @@
+using Entity.Interfaces;
 using Infrastructure;
 using Infrastructure.Data;
+using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -22,6 +24,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<StoreContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -30,13 +35,32 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Seed the database
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    var context = services.GetRequiredService<StoreContext>();
-    context.Database.Migrate(); // Applies migration and creates DB if not exists
-    DbInitializer.Seed(context);
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+//    try
+//    {
+//        var context = services.GetRequiredService<StoreContext>();
+//        context.Database.Migrate();
+//        DbInitializer.Seed(context);
+//    }
+//    catch (Exception ex)
+//    {
+//        var logger = services.GetRequiredService<ILogger<Program>>();
+//        logger.LogError(ex, "An error occurred while migrating or seeding the database.");
+//    }
+//}
+
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+//    var context = services.GetRequiredService<StoreContext>();
+//    context.Database.Migrate();
+//    DbInitializer.Seed(context);
+//}
+
+
+
 
 
 // Configure the HTTP request pipeline.

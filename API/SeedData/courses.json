@@ -1,0 +1,30 @@
+[
+    {
+        "title": "ASP.NET Core Web API",
+        "price": 49.99,
+        "instructor": "John Doe",
+        "rating": 4.8,
+        "image": "aspnet.jpg",
+        "subtitle": "Learn how to build APIs with ASP.NET Core",
+        "description": "Comprehensive guide to ASP.NET Core Web API development.",
+        "students": 3000,
+        "language": "English",
+        "level": "Beginner",
+        "categoryId": 1,
+        "lastUpdated": "2024-05-01T00:00:00"
+    },
+    {
+        "title": "React for Beginners",
+        "price": 39.99,
+        "instructor": "Jane Smith",
+        "rating": 4.6,
+        "image": "react.jpg",
+        "subtitle": "Get started with React.js",
+        "description": "Learn the fundamentals of React for building UIs.",
+        "students": 4500,
+        "language": "English",
+        "level": "Intermediate",
+        "categoryId": 2,
+        "lastUpdated": "2024-04-15T00:00:00"
+    }
+]

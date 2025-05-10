@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Build RESTful APIs",
+        "courseTitle": "ASP.NET Core Web API"
+    },
+    {
+        "name": "Use Entity Framework Core",
+        "courseTitle": "ASP.NET Core Web API"
+    },
+    {
+        "name": "Understand React hooks",
+        "courseTitle": "React for Beginners"
+    },
+    {
+        "name": "Manage state with useState and useEffect",
+        "courseTitle": "React for Beginners"
+    }
+]
